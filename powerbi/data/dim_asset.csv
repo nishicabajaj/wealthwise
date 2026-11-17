@@ -1,0 +1,22 @@
+asset_id,symbol,asset_name,asset_class,sector,currency,data_source
+A001,RELIANCE.NS,Reliance Industries,Stock,Energy,INR,synthetic
+A002,TCS.NS,Tata Consultancy Services,Stock,IT,INR,synthetic
+A003,HDFCBANK.NS,HDFC Bank,Stock,Financials,INR,synthetic
+A004,INFY.NS,Infosys,Stock,IT,INR,synthetic
+A005,ICICIBANK.NS,ICICI Bank,Stock,Financials,INR,synthetic
+A006,ITC.NS,ITC,Stock,FMCG,INR,synthetic
+A007,LT.NS,Larsen & Toubro,Stock,Industrials,INR,synthetic
+A008,HINDUNILVR.NS,Hindustan Unilever,Stock,FMCG,INR,synthetic
+A009,SUNPHARMA.NS,Sun Pharmaceutical,Stock,Healthcare,INR,synthetic
+A010,MARUTI.NS,Maruti Suzuki,Stock,Auto,INR,synthetic
+A011,MF_FLEXI,WW Flexi Cap Fund,Mutual Fund,Diversified Equity,INR,synthetic
+A012,MF_MID,WW Mid Cap Fund,Mutual Fund,Mid Cap Equity,INR,synthetic
+A013,MF_LARGE,WW Bluechip Fund,Mutual Fund,Large Cap Equity,INR,synthetic
+A014,MF_BAL,WW Balanced Advantage Fund,Mutual Fund,Hybrid,INR,synthetic
+A015,MF_LIQ,WW Liquid Fund,Mutual Fund,Debt,INR,synthetic
+A016,NIFTYBEES.NS,Nippon India Nifty 50 BeES,ETF,Index,INR,synthetic
+A017,GOLDBEES.NS,Nippon India Gold BeES,ETF,Gold,INR,synthetic
+A018,BANKBEES.NS,Nippon India Bank BeES,ETF,Banking,INR,synthetic
+A019,GSEC_2034,GoI 7.10% G-Sec 2034,Bond,Government,INR,synthetic
+A020,CORP_AAA_2029,AAA Corporate Bond 2029,Bond,Corporate,INR,synthetic
+A021,SDL_2033,State Development Loan 2033,Bond,Government,INR,synthetic

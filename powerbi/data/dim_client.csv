@@ -1,0 +1,26 @@
+client_id,full_name,email,phone,city,date_of_birth,occupation,annual_income,risk_appetite,investment_objective,investment_horizon_years,join_date
+C001,Aarav Menon,aarav.menon@example.com,+91-9528562917,Delhi,1975-09-25,Software Engineer,1620000.0,High,Wealth Creation,19,2024-01-19
+C002,Vivaan Shah,vivaan.shah@example.com,+91-9683857397,Ahmedabad,1984-10-04,Government Officer,1773000.0,Low,Capital Preservation,4,2024-11-04
+C003,Aditya Naik,aditya.naik@example.com,+91-9216056136,Bengaluru,1977-05-16,Retired,1306000.0,Medium,Retirement,9,2024-09-20
+C004,Ananya Singh,ananya.singh@example.com,+91-9233026844,Mumbai,1970-06-24,Doctor,1698000.0,Medium,Home Purchase,9,2024-02-14
+C005,Diya Bhatt,diya.bhatt@example.com,+91-9919025481,Thane,1987-06-16,Government Officer,1372000.0,Low,Capital Preservation,6,2023-12-27
+C006,Ishaan Patel,ishaan.patel@example.com,+91-9133573560,Chennai,1986-08-09,Architect,2375000.0,High,Wealth Creation,8,2024-03-19
+C007,Kavya Joshi,kavya.joshi@example.com,+91-9207100828,Thane,1965-03-27,Retired,1386000.0,Medium,Retirement,12,2024-11-28
+C008,Rohan Agarwal,rohan.agarwal@example.com,+91-9081019914,Kolkata,1989-03-03,Marketing Manager,1659000.0,Low,Regular Income,7,2024-09-11
+C009,Priya Banerjee,priya.banerjee@example.com,+91-9623350096,Thane,1965-03-13,Government Officer,1278000.0,Medium,Wealth Creation,8,2024-10-11
+C010,Arjun Verma,arjun.verma@example.com,+91-9818874899,Mumbai,1963-10-23,Software Engineer,2347000.0,Medium,Child Education,11,2024-11-13
+C011,Neha Pillai,neha.pillai@example.com,+91-9058917093,Pune,1997-10-04,Retired,2305000.0,Medium,Retirement,7,2025-01-02
+C012,Siddharth Reddy,siddharth.reddy@example.com,+91-9763866013,Thane,1981-02-07,Architect,2422000.0,Medium,Child Education,10,2024-11-19
+C013,Meera Kapoor,meera.kapoor@example.com,+91-9785686138,Bengaluru,1961-04-12,Government Officer,2274000.0,Medium,Wealth Creation,5,2024-11-26
+C014,Karan Mehta,karan.mehta@example.com,+91-9699810396,Ahmedabad,1979-10-08,Business Owner,1349000.0,Low,Regular Income,6,2024-01-22
+C015,Sneha Chatterjee,sneha.chatterjee@example.com,+91-9792625491,Delhi,1983-08-13,Teacher,2077000.0,Low,Capital Preservation,8,2024-04-11
+C016,Rahul Nair,rahul.nair@example.com,+91-9183561881,Mumbai,1984-04-11,Chartered Accountant,1863000.0,Low,Retirement,4,2024-07-31
+C017,Pooja Malhotra,pooja.malhotra@example.com,+91-9529649610,Mumbai,1962-01-26,Marketing Manager,1424000.0,Medium,Child Education,6,2024-06-06
+C018,Vikram Sharma,vikram.sharma@example.com,+91-9178411547,Kolkata,1992-08-25,Government Officer,2087000.0,Low,Retirement,3,2024-01-23
+C019,Anjali Gupta,anjali.gupta@example.com,+91-9285031527,Thane,1966-03-19,Government Officer,3494000.0,Medium,Home Purchase,6,2024-09-26
+C020,Rajesh Desai,rajesh.desai@example.com,+91-9155664176,Chennai,1987-10-30,Marketing Manager,1610000.0,High,Aggressive Growth,18,2025-02-27
+C021,Sunita Chopra,sunita.chopra@example.com,+91-9318728092,Pune,1980-04-06,Software Engineer,1239000.0,High,Early Retirement,10,2024-01-04
+C022,Amit Kulkarni,amit.kulkarni@example.com,+91-9896409989,Delhi,1997-05-12,Software Engineer,1855000.0,Medium,Retirement,9,2024-07-22
+C023,Deepa Deshmukh,deepa.deshmukh@example.com,+91-9127049824,Ahmedabad,1968-06-18,Teacher,1183000.0,Medium,Retirement,7,2023-11-10
+C024,Manish Iyer,manish.iyer@example.com,+91-9562577534,Ahmedabad,1980-03-10,Marketing Manager,1017000.0,High,Wealth Creation,8,2025-02-06
+C025,Lakshmi Rao,lakshmi.rao@example.com,+91-9301361071,Delhi,1997-10-23,Teacher,1268000.0,Medium,Retirement,12,2024-12-25

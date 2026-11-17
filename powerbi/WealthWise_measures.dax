@@ -1,0 +1,63 @@
+// =====================================================================
+// WealthWise - DAX measures.  Create a "Measures" table (Enter Data -> blank) and paste these in.
+// Tables are the CSVs in powerbi/data (names identical, e.g. fact_holdings).
+// =====================================================================
+
+// ---------- Parameter -------------------------------------------------
+Risk Free Rate = 0.065
+
+// ---------- KPI cards -------------------------------------------------
+Total AUM          = SUM ( fact_holdings[market_value] )
+Total Investments  = SUM ( fact_holdings[invested] )
+Unrealized Profit  = [Total AUM] - [Total Investments]
+Portfolio ROI %    = DIVIDE ( [Unrealized Profit], [Total Investments] )
+Number of Clients  = DISTINCTCOUNT ( dim_client[client_id] )
+Realized P&L       = SUM ( fact_client_metrics[realized_pnl] )
+
+Best Performing Asset =
+VAR t =
+    ADDCOLUMNS (
+        SUMMARIZE ( fact_holdings, fact_holdings[asset_name] ),
+        "roi", DIVIDE ( CALCULATE ( SUM ( fact_holdings[unrealized_pnl] ) ),
+                        CALCULATE ( SUM ( fact_holdings[invested] ) ) )
+    )
+RETURN MAXX ( TOPN ( 1, t, [roi], DESC ), fact_holdings[asset_name] )
+
+Best Asset ROI % =
+VAR t =
+    ADDCOLUMNS (
+        SUMMARIZE ( fact_holdings, fact_holdings[asset_name] ),
+        "roi", DIVIDE ( CALCULATE ( SUM ( fact_holdings[unrealized_pnl] ) ),
+                        CALCULATE ( SUM ( fact_holdings[invested] ) ) )
+    )
+RETURN MAXX ( t, [roi] )
+
+// ---------- Risk (respond to the client slicer) ------------------------
+// Daily returns are time-weighted; annualised with 252 trading days.
+Portfolio Volatility = STDEV.S ( fact_portfolio_daily[ret] ) * SQRT ( 252 )
+Firm Volatility      = STDEV.S ( fact_firm_daily[ret] ) * SQRT ( 252 )
+Max Drawdown         = MIN ( fact_portfolio_daily[drawdown] )
+
+// Pre-computed in Python (identical formulas); AVERAGE returns the client's value when one client is selected.
+Sharpe Ratio = AVERAGE ( fact_client_metrics[sharpe] )
+Beta         = AVERAGE ( fact_client_metrics[beta] )
+CAGR         = AVERAGE ( fact_client_metrics[cagr] )
+
+// Sharpe recomputed live from the risk-free parameter (optional)
+Sharpe (live) = DIVIDE ( [CAGR] - [Risk Free Rate], [Portfolio Volatility] )
+
+// ---------- Allocation & performance ------------------------------------
+AUM % of Total = DIVIDE ( [Total AUM], CALCULATE ( [Total AUM], ALL ( fact_holdings ) ) )
+Avg Monthly Return = AVERAGE ( fact_monthly_returns[portfolio_return] )
+Monthly Excess Return = AVERAGE ( fact_monthly_returns[portfolio_return] ) - AVERAGE ( fact_monthly_returns[benchmark_return] )
+Latest Portfolio Value =
+    CALCULATE ( SUM ( fact_portfolio_daily[value] ), LASTDATE ( dim_date[date] ) )
+Latest Profit / Loss =
+    CALCULATE ( SUM ( fact_portfolio_daily[pnl] ), LASTDATE ( dim_date[date] ) )
+
+Risk Alignment Flag =
+    SWITCH ( SELECTEDVALUE ( fact_client_metrics[alignment] ),
+             "Aligned", "✔ Aligned", "Above appetite", "▲ Above appetite", "Below appetite", "▼ Below appetite", "–" )
+
+// ---------- Number formats: use Indian grouping via format string -------
+// In Modeling > Format > Custom:  [>=10000000]##\,##\,##\,##0;[>=100000]##\,##\,##0;##,##0
