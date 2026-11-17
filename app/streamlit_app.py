@@ -49,8 +49,16 @@ def refresh():
 
 ver = st.session_state["ver"]
 if not config.DB_PATH.exists() and not __import__("os").getenv("WEALTHWISE_DB_URL"):
-    st.error("Database not found. Run `python scripts/build_db.py` first.")
-    st.stop()
+    # First launch (e.g. on Streamlit Community Cloud): build the synthetic database automatically.
+    from wealthwise import data_gen  # noqa: E402
+
+    with st.spinner("First launch: building the synthetic database (about 30 seconds)..."):
+        _conn = db.connect()
+        db.init_schema(_conn, drop_existing=True)
+        _frames = data_gen.generate_all(42)
+        for _t in ("clients", "assets", "prices", "benchmark_prices", "transactions"):
+            db.write_frame(_conn, _t, _frames[_t])
+        _conn.close()
 ds = get_ds(ver)
 if ds.clients.empty:
     st.warning("No clients yet - add one under 'Manage data'.")
